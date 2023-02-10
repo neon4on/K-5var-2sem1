@@ -19,22 +19,6 @@ class Figure {
     bool live; // Proverka
 protected:
     void Create(int num) {
-        if (num == 3) {
-            cout << "Figure Created!";
-            cout << endl;
-            cout << "Start position:" << endl;
-            cout << "First \t= 0,0" << endl;
-            cout << "Second \t= 0,0" << endl;
-            cout << "Third \t= 0,0";
-            cout << endl;
-            x1 = 0;
-            y1 = 0;
-            x2 = 0;
-            y2 = 0;
-            x3 = 0;
-            y3 = 0;
-            live = 1;
-        }
         else {
             cout << "Figure Created!";
             cout << endl;
@@ -118,13 +102,13 @@ protected:
     void MoveO(int num) { //Перемещение объекта на плоскости
         if (num == 3) {
 
-            if (liveA == 1) {
-                Ax1 += 1;
-                Ay1 += 0;
-                Ax2 += 4;
-                Ay2 += 1;
-                Ax3 += -3;
-                Ay3 += -4;
+            if (live == 1) {
+                x1 += 1;
+                y1 += 0;
+                x2 += 4;
+                y2 += 1;
+                x3 += -3;
+                y3 += -4;
                 cout << "Figure has been moved";
             }
             else {
@@ -133,19 +117,19 @@ protected:
             cout << endl;
         }
         else {
-            if (liveB == 1) {
-                Bx1 += 2;
-                By1 += -5;
-                Bx2 += 3;
-                By2 += 5;
-                Bx3 += -6;
-                By3 += -2;
-                Bx4 += -8;
-                By4 += -7;
-                Bx5 += 5;
-                By5 += -3;
-                Bx6 += -10;
-                By6 += 15;
+            if (live == 1) {
+                x1 += 2;
+                y1 += -5;
+                x2 += 3;
+                y2 += 5;
+                x3 += -6;
+                y3 += -2;
+                x4 += -8;
+                y4 += -7;
+                x5 += 5;
+                y5 += -3;
+                x6 += -10;
+                y6 += 15;
                 cout << "Figure has been moved";
             }
             else {
@@ -157,10 +141,10 @@ protected:
     void Intersect(int num) { //Определение факта перемещение объекта
         if (num == 3) {
 
-            if (liveA == 1) {
-                cout << "First: " << Ax1 << "," << Ay1 << endl <<
-                    "Second: " << Ax2 << "," << Ay2 << endl <<
-                    "Third: " << Ax3 << "," << Ay3;
+            if (live == 1) {
+                cout << "First: " << x1 << "," << y1 << endl <<
+                    "Second: " << x2 << "," << y2 << endl <<
+                    "Third: " << x3 << "," << y3;
             }
             else {
                 cout << "Figure Does not exist!";
@@ -168,14 +152,14 @@ protected:
             cout << endl;
         }
         else {
-            if (liveB == 1) {
+            if (live == 1) {
                 cout <<
-                    "First: " << Bx1 << "," << By1 << endl <<
-                    "Second: " << Bx2 << "," << By2 << endl <<
-                    "Third: " << Bx3 << "," << By3 << endl <<
-                    "Fourth: " << Bx4 << "," << By4 << endl <<
-                    "Fifth: " << Bx5 << "," << By5 << endl <<
-                    "Sixth: " << Bx6 << "," << By6 << endl;
+                    "First: " << x1 << "," << y1 << endl <<
+                    "Second: " << x2 << "," << y2 << endl <<
+                    "Third: " << x3 << "," << y3 << endl <<
+                    "Fourth: " << x4 << "," << y4 << endl <<
+                    "Fifth: " << x5 << "," << y5 << endl <<
+                    "Sixth: " << x6 << "," << y6 << endl;
             }
             else {
                 cout << "Figure Does not exist!";
@@ -193,7 +177,25 @@ protected:
     }
 };
 class FigureA : protected Figure {
-    
+public:
+    Create(3) {
+        if (num == 3) {
+            cout << "Figure Created!";
+            cout << endl;
+            cout << "Start position:" << endl;
+            cout << "First \t= 0,0" << endl;
+            cout << "Second \t= 0,0" << endl;
+            cout << "Third \t= 0,0";
+            cout << endl;
+            x1 = 0;
+            y1 = 0;
+            x2 = 0;
+            y2 = 0;
+            x3 = 0;
+            y3 = 0;
+            live = 1;
+        }
+    }
 };
 class FigureB : protected Figure {
 };
